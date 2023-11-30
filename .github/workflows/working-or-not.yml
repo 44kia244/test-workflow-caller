@@ -10,10 +10,7 @@ on:
         default: My variable is not defined (from caller)
         type: string
 jobs:
-  Run:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Call 44kia244/test-reusable-workflow@main
-        uses: 44kia244/test-reusable-workflow/.github/workflows/run.yml@main
-        with:
-          myVar: ${{ inputs.myVar }}
+  Call-Another-Workflow:
+    uses: 44kia244/test-reusable-workflow/.github/workflows/run.yml@main
+    with:
+      myVar: ${{ inputs.myVar }}
